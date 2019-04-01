@@ -1,0 +1,46 @@
+## visual Social Network analysis
+
+###code###
+cars <- c("mazada", "toyota", "ford", "dodge", "fiat")
+
+cars
+[1] "mazada" "toyota" "ford"   "dodge"  "fiat"  
+
+sn <-matrix(temp1, nrow = 5,ncol = 5, dimnames = list(cars,cars))
+Error in matrix(temp1, nrow = 5, ncol = 5, dimnames = list(cars, cars)) : 
+  object 'temp1' not found
+
+sn <-matrix(nrow = 5,ncol = 5, dimnames = list(cars,cars))
+
+sn
+       mazada toyota ford dodge fiat
+mazada     NA     NA   NA    NA   NA
+toyota     NA     NA   NA    NA   NA
+ford       NA     NA   NA    NA   NA
+dodge      NA     NA   NA    NA   NA
+fiat       NA     NA   NA    NA   NA
+
+gplot(sn,displaylabels = TRUE)
+
+ sn <-matrix(1;9, nrow = 5,ncol = 5, dimnames = list(cars,cars))
+Error: unexpected ';' in "sn <-matrix(1;"
+
+
+sn <-matrix(1:9, nrow = 5,ncol = 5, dimnames = list(cars,cars))
+Warning message:
+In matrix(1:9, nrow = 5, ncol = 5, dimnames = list(cars, cars)) :
+  data length [9] is not a sub-multiple or multiple of the number of rows [5]
+
+
+ sn
+       mazada toyota ford dodge fiat
+mazada      1      6    2     7    3
+toyota      2      7    3     8    4
+ford        3      8    4     9    5
+dodge       4      9    5     1    6
+fiat        5      1    6     2    7
+> gplot(sn,displaylabels = TRUE)
+> id <- degree(sn,cmode = 'indegree')
+> gplot(sn,displaylabels = TRUE, vertex.cex = id)
+> gplot(sn,displaylabels = TRUE, vertex.rot = id)
+> 
